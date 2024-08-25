@@ -1,38 +1,139 @@
 .App {
   text-align: center;
+  padding: 20px;
+  background: linear-gradient(to right, #04ffea, #00ffa2); /* Example gradient from pink to orange */
+  height: 100vh; /* Full viewport height */
+  color: #333; /* Text color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+textarea {
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+select {
+  margin: 10px;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Styling for the text input field */
+input[type="text"] {
+  width: calc(100% - 24px); /* Full width minus padding */
+  padding: 12px 16px; /* Padding inside the input */
+  font-size: 16px; /* Font size */
+  border: 2px solid #e0e0e0; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  background: #fafafa; /* Light background */
+  color: #333333; /* Dark text color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  font-family: 'Roboto', sans-serif; /* Custom font */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="text"]:focus {
+  border-color: #6e45e2; /* Border color on focus */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on focus */
+  outline: none; /* Remove default outline */
+}
+
+input[type="text"]::placeholder {
+  color: #b0b0b0; /* Placeholder text color */
+  font-style: italic; /* Italic placeholder text */
+}
+
+/* Styling for the button */
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #000000; /* White border */
+  border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(45deg, #6e45e2, #88d3ce); /* Gradient background */
+  color: white; /* Text color */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.3s ease; /* Smooth transition */
+  font-family: 'Roboto', sans-serif; /* Custom font */
+}
+
+button:hover {
+  background: linear-gradient(45deg, #88d3ce, #6e45e2); /* Inverse gradient on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+  border-color: #00ff3c; /* Change border color on hover */
+}
+
+button:focus {
+  outline: none; /* Remove default outline */
+}
+
+button:active {
+  background: linear-gradient(45deg, #6e45e2, #88d3ce); /* Maintain gradient on click */
+  transform: scale(0.98); /* Slightly shrink button on click */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Revert shadow on click */
+  border-color: #ffcc00; /* Maintain border color on click */
+}
+
+/* Styling for the list container */
+.results-container {
+  margin: 20px 0;
+  padding: 20px;
+  border: 2px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px; /* Rounded corners */
+  background: #f9f9f9; /* Light background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Styling for the list items */
+ul.custom-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+ul.custom-list li {
+  padding: 10px 15px; /* Padding inside each list item */
+  margin-bottom: 10px; /* Space between list items */
+  border: 1px solid #e0e0e0; /* Border around each list item */
+  border-radius: 8px; /* Rounded corners */
+  background: #ffffff; /* White background */
+  color: #333333; /* Dark text color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+ul.custom-list li:hover {
+  background: #f0f0f0; /* Slightly darker background on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* More intense shadow on hover */
+}
+/* Styling for the list items with icons */
+ul.custom-list li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* For positioning icons */
+}
+
+ul.custom-list li::before {
+  content: "\2022"; /* Unicode for bullet point */
+  color: #6e45e2; /* Color for the bullet point */
+  font-size: 24px; /* Size of the bullet point */
+  position: absolute;
+  left: 10px; /* Position bullet point */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust vertical alignment */
 }
